@@ -1,0 +1,101 @@
+Project_ID,Project_Type,Project_Status,Project_Value_NGN,Design_Duration_Days,Revision_Count,Project_Year,Discipline
+CA658,Industrial,Completed," 31,300,001.00 ",40,2,2020,E Only
+CA676,Commercial,Completed," 103,563,466.70 ",35,6,2023,MEP
+CA714,Commercial,Ongoing," 90,000,000.00 ",15,1,2026,MEP
+CA703,Industrial,Completed," 41,404,000.00 ",5,,2024,MEP
+CA682,Commercial,Completed," 12,173,300.00 ",10,4,2023,MEP
+CA700,Commercial,Completed," 21,780,000.00 ",10,2,2025,MEP
+CA707,Commercial,Ongoing," 100,000,000.00 ",45,4,2024,MEP
+CA670,Commercial,Completed," 10,750,000.00 ",12,2,2022,MEP
+CA664,Commercial,Ongoing," 54,211,245.00 ",65,4,2021,MEP
+CA708,Commercial,Ongoing," 150,000,000.00 ",40,,2025,MEP
+CA711,Industrial,Completed," 5,375,000.00 ",5,,2025,MEP
+CA695,Commercial,Completed," 60,000,000.00 ",24,4,2024,MEP
+CA042/PJ027,Residential,Proposal," 50,786,600.00 ",80,4,2025,MEP
+CA042/PJ013,Residential,Proposal," 12,859,406.00 ",18,1,2022,MEP
+CA683,Commercial,Ongoing," 259,972,998.10 ",80,4,2023,MEP
+CA699,Residential,Completed," 48,000,000.00 ",10,1,2024,MEP
+CA712,Commercial,Ongoing," 35,147,000.00 ",45,4,2025,MEP
+CA042/PJ012,Residential,Proposal," 65,451,400.00 ",26,2,2023,MEP
+CA042/PJ009,Commercial,Proposal," 159,085,029.00 ",80,6,2025,MEP
+CA042/PJ012,Commercial,Proposal," 105,575,300.00 ",75,6,2025,MEP
+CA042/PJ013,Commercial,Proposal," 152,866,328.00 ",50,3,2025,MEP
+CA042/PJ019,Commercial,Proposal," 288,200,475.00 ",220,6,2025,MEP
+CA703,Industrial,Ongoing," 224,234,400.00 ",,,2025,E Only
+CA042/PJ031,Industrial,Proposal," 28,360,000.00 ",,,2025,E Only
+CA702,Commercial,Ongoing," 157,018,209.60 ",20,4,2024,MEP
+CA675,Commercial,Completed," 7,972,870.64 ",5,,2023,MEP
+CA696,Residential,Ongoing," 27,453,690.00 ",20,,2024,MEP
+CA715,Commercial,Ongoing," 14,397,200.00 ",15,,2026,M Only
+CA669,Industrial,Ongoing," 98,109,000.00 ",40,1,2022,MEP
+CA693,Commercial,Completed," 13,218,615.00 ",5,1,2024,M Only
+CA682,Residential,Completed," 3,800,000.00 ",,,2023,MEP
+CA698,Residential,Completed," 7,250,000.00 ",10,1,2024,MEP
+CA716,Industrial,Ongoing," 97,245,325.00 ",50,6,2026,MEP
+CA663,Residential,Completed," 156,000,000.00 ",110,4,2021,MEP
+CA641,Residential,Completed," 19,255,603.00 ",22,4,2021,MEP
+CA697,Commercial,Completed," 13,600,000.00 ",15,4,2025,MEP
+CA685,Industrial,Completed," 36,029,000.00 ",,,2023,MEP
+CA642,Commercial,Completed," 24,099,208.00 ",25,2,2019,MEP
+CA690,Industrial,Completed," 100,944,300.00 ",25,1,2024,MEP
+CA687,Industrial,Completed," 10,866,000.00 ",10,1,2023,MEP
+CA694,Industrial,Completed," 2,687,500.00 ",,,2024,E Only
+CA689,Industrial,Completed," 5,461,000.00 ",,,2023,M Only
+CA639,Commercial,Completed," 2,890,900.00 ",4,1,2021,M Only
+CA691,Residential,Ongoing," 40,152,308.00 ",100,6,2024,MEP
+CA649,Commercial,Completed," 22,925,000.00 ",22,2,2021,MEP
+CA680,Commercial,Completed," 39,480,000.00 ",30,4,2023,MEP
+CA582,Commercial,Completed," 45,000,000.00 ",60,6,2015,MEP
+CA688,Commercial,Completed," 40,152,308.00 ",22,2,2024,MEP
+CA686,Industrial,Completed," 173,671,875.00 ",70,6,2023,MEP
+CA042/PJ014,Commercial,Proposal," 26,472,100.00 ",,,2024,MEP
+CA042/PJ018,Commercial,Proposal," 39,101,050.00 ",80,4,2023,E Only
+CA042/PJ022,Commercial,Proposal," 65,229,950.00 ",370,6,2023,MEP
+CA042/PJ025,Commercial,Proposal," 68,779,950.00 ",31,4,2023,MEP
+CA042/PJ012,Residential,Proposal," 50,952,200.00 ",116,6,2023,E Only
+CA042/PJ020,Commercial,Proposal," 25,081,050.00 ",40,4,2023,E Only
+CA042/PJ026,Industrial,Proposal," 4,544,000.00 ",,,2022,E Only
+CA042/PJ006,Residential,Proposal," 41,839,647.70 ",86,6,2022,MEP
+CA042/PJ007,Commercial,Proposal," 49,464,194.00 ",75,4,2022,MEP
+CA042/PJ006,Residential,Proposal," 43,267,425.00 ",284,6,2020,MEP
+CA042/PJ021,Commercial,Proposal," 85,369,959.00 ",80,4,2020,MEP
+CA706,Commercial,Ongoing," 169,400,000.00 ",70,4,2025,MEP
+CA601,Commercial,Completed," 14,000,000.00 ",20,2,2016,MEP
+CA556,Residential,Completed," 53,960,000.00 ",156,4,2012,MEP
+CA619,Commercial,Completed," 49,400,593.00 ",70,4,2017,MEP
+CA602,Commercial,Completed," 14,400,000.00 ",30,4,2016,MEP
+CA615,Commercial,Completed," 3,421,000.00 ",5,1,2017,MEP
+CA656,Commercial,Completed," 10,303,117.00 ",20,4,2020,MEP
+CA042/PJ014,Residential,Proposal," 204,940,144.00 ",600,6,2021,MEP
+CA042/PJ004,Residential,Proposal," 89,566,965.00 ",307,6,2020,MEP
+CA042/PJ006,Commercial,Proposal," 65,231,975.00 ",326,4,2020,MEP
+CA042/PJ008,Residential,Proposal," 29,850,416.00 ",96,4,2020,MEP
+CA042/PJ020,Commercial,Proposal," 36,188,776.00 ",80,4,2020,MEP
+CA648,Commercial,Completed," 242,138,175.00 ",180,6,2019,MEP
+CA627,Commercial,Completed," 13,283,500.00 ",5,1,2019,MEP
+CA640,Commercial,Completed," 10,752,539.00 ",20,1,2019,MEP
+CA599,Commercial,Completed," 4,590,000.00 ",2,1,2020,MEP
+CA597,Commercial,Completed," 45,000,000.00 ",40,4,2017,MEP
+CA610,Commercial,Completed," 258,557.00 ",5,1,2018,MEP
+CA632,Residential,Completed," 14,978,900.00 ",40,4,2018,MEP
+CA589,Commercial,Completed," 9,706,789.00 ",20,1,2018,E Only
+CA042/PJ024,Residential,Proposal," 25,640,800.00 ",80,4,2018,MEP
+CA042/PJ002,Commercial,Proposal," 64,953,207.00 ",150,4,2021,MEP
+CA042/PJ014,Commercial,Proposal," 30,000,000.00 ",20,4,2018,MEP
+CA042/PJ009,Residential,Proposal," 63,684,000.00 ",90,4,2025,MEP
+CA679,Commercial,Completed," 30,000,000.00 ",45,4,2023,MEP
+CA674,Commercial,Ongoing," 121,099,848.00 ",60,6,2023,MEP
+CA611,Commercial,Completed," 350,000,000.00 ",80,6,2016,MEP
+CA582,Commercial,Completed," 120,857,143.00 ",80,6,2014,MEP
+CA554,Commercial,Completed," 74,130,695.00 ",82,6,2013,MEP
+CA468,Commercial,Completed," 13,798,000.00 ",25,2,2006,MEP
+CA594,Commercial,Completed," 36,219,875.00 ",40,4,2017,M Only
+CA647,Commercial,Completed," 13,781,883.00 ",25,4,2020,MEP
+CA644,Commercial,Completed," 14,726,000.00 ",7,1,2018,MEP
+CA621,Commercial,Completed," 6,213,200.00 ",10,1,2017,MEP
+CA509,Commercial,Completed," 2,720,834.00 ",40,6,2017,MEP
+CA544,Commercial,Completed," 10,572,488.00 ",25,4,2011,MEP
+CA623,Commercial,Completed," 80,000,000.00 ",40,4,2018,MEP
+CA042/PJ007,Commercial,Completed," 360,000,000.00 ",120,6,2026,MEP
+CA042/PJ008,Residential,Completed," 42,030,400.00 ",30,4,2026,MEP
+CA042/PJ013,Residential,Completed," 209,920,000.00 ",70,4,2026,MEP
