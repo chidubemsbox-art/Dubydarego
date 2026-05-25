@@ -1,6 +1,6 @@
 ---
 title: "Building By The Numbers"
-subtitle: "What 101 Projects Reveal About Design, Complexity, and Revenue at CA Consultants Limited"
+subtitle: "What 100 Projects Reveal About Design, Complexity, and Revenue at CA Consultants Limited"
 author: "Chidubem Mba — Senior Project Engineer & Project Manager"
 date: today
 format:
