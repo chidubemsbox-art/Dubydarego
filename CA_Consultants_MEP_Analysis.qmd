@@ -1,5 +1,5 @@
 ---
-title: "Building by the Numbers"
+title: "Building By The Numbers"
 subtitle: "What 101 Projects Reveal About Design, Complexity, and Revenue at CA Consultants Limited"
 author: "Chidubem Mba — Senior Project Engineer & Project Manager"
 date: today
@@ -61,12 +61,201 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* Title Block */
+/* ===== CONSTRUCTION BLUEPRINT BACKGROUND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    /* Subtle blueprint grid */
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px),
+    /* Larger grid squares */
+    linear-gradient(rgba(0,212,255,0.015) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0,212,255,0.015) 2px, transparent 2px);
+  background-size:
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px;
+}
+
+/* Faint engineering schematic accents on the side */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0,212,255,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 60% 70%, rgba(121,40,202,0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(255,0,110,0.02) 0%, transparent 30%);
+}
+
+/* ===== DOWNLOAD DATA BUTTON ===== */
+.download-data-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(121,40,202,0.10));
+  border: 1px solid rgba(0,212,255,0.3);
+  border-radius: 8px;
+  color: var(--accent-cyan);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+}
+
+.download-data-btn:hover {
+  background: linear-gradient(135deg, rgba(0,212,255,0.22), rgba(121,40,202,0.18));
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0,212,255,0.2);
+  transform: translateY(-1px);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.download-data-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ===== MARGIN GLOW STRIPS + RULER MARKS ===== */
+.margin-decor {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+}
+
+.margin-decor.left {
+  left: 0;
+}
+
+.margin-decor.right {
+  right: 0;
+}
+
+.margin-decor .glow-strip {
+  width: 4px;
+}
+
+.margin-decor.left .glow-strip {
+  background: linear-gradient(180deg, #00d4ff 0%, #7928ca 40%, #ff006e 70%, transparent 100%);
+  box-shadow: 0 0 12px rgba(0,212,255,0.3), 0 0 24px rgba(121,40,202,0.15);
+}
+
+.margin-decor.right .glow-strip {
+  background: linear-gradient(180deg, transparent 0%, #ff006e 30%, #7928ca 60%, #00d4ff 100%);
+  box-shadow: 0 0 12px rgba(255,0,110,0.3), 0 0 24px rgba(121,40,202,0.15);
+}
+
+.margin-decor .ruler {
+  width: 20px;
+  position: relative;
+  background:
+    repeating-linear-gradient(180deg, transparent 0px, transparent 19px, rgba(0,212,255,0.1) 19px, rgba(0,212,255,0.1) 20px),
+    repeating-linear-gradient(180deg, transparent 0px, transparent 79px, rgba(0,212,255,0.22) 79px, rgba(0,212,255,0.22) 80px);
+}
+
+.margin-decor.left .ruler {
+  border-right: 1px solid rgba(0,212,255,0.1);
+}
+
+.margin-decor.right .ruler {
+  border-left: 1px solid rgba(0,212,255,0.1);
+}
+
+.margin-decor .ruler-number {
+  position: absolute;
+  font-size: 7px;
+  color: rgba(0,212,255,0.3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.margin-decor.left .ruler-number {
+  right: 4px;
+}
+
+.margin-decor.right .ruler-number {
+  left: 4px;
+}
+
+/* ===== LOGO (positioned next to date) ===== */
 .quarto-title-block {
-  padding: 3rem 0 2rem 0;
+  position: relative;
+  padding: 1.5rem 0 2rem 0;
   margin-bottom: 2rem;
   border-bottom: 2px solid transparent;
   border-image: var(--gradient-main) 1;
+}
+
+/* ===== FIRM BRANDING BAR ===== */
+.firm-branding-bar {
+  background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(121,40,202,0.06));
+  border-bottom: 1px solid rgba(0,212,255,0.2);
+  padding: 12px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.firm-branding-bar .firm-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.firm-branding-bar .firm-logo {
+  max-width: 70px;
+  height: auto;
+  border-radius: 4px;
+  filter: drop-shadow(0 2px 8px rgba(0,212,255,0.15));
+  transition: transform 0.3s ease;
+}
+
+.firm-branding-bar .firm-logo:hover {
+  transform: scale(1.05);
+}
+
+.firm-branding-bar .firm-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.02em;
+}
+
+.firm-branding-bar .firm-tagline {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.firm-branding-bar .firm-location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 .quarto-title .title {
@@ -78,15 +267,27 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.2 !important;
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
 .quarto-title .subtitle {
-  font-size: 1.1rem !important;
-  color: var(--text-muted) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 1.15rem !important;
+  font-style: italic !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.04em;
+  text-transform: none !important;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-amber), var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: subtitleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes subtitleShimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 /* Section Headings */
@@ -597,14 +798,74 @@ blockquote {
   letter-spacing: 0.05em;
 }
 
+/* ===== PROFESSIONAL FOOTER ===== */
+.document-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 2px solid transparent;
+  border-image: var(--gradient-main) 1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.document-footer .footer-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.document-footer .footer-firm {
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.document-footer .footer-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--gradient-main);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.document-footer .footer-programme {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
 /* Print-friendly overrides */
 @media print {
   body { background: white !important; color: black !important; }
   h1, h2, h3 { -webkit-text-fill-color: #1a1a2e !important; }
   .metric-value { -webkit-text-fill-color: #1a1a2e !important; }
-  .progress-bar-container, .back-to-top { display: none !important; }
+  .progress-bar-container, .back-to-top, .margin-decor { display: none !important; }
+  .document-footer .footer-name { -webkit-text-fill-color: #1a1a2e !important; }
 }
 </style>
+```
+
+```{r}
+#| label: embed-logo
+#| echo: false
+#| results: asis
+
+logo_path <- "ca_logo.png"
+if (file.exists(logo_path)) {
+  logo_b64 <- base64enc::base64encode(logo_path)
+  logo_uri <- paste0("data:image/png;base64,", logo_b64)
+} else {
+  logo_uri <- ""
+}
+htmltools::browsable(htmltools::HTML(sprintf(
+  '<script>var caLogoDataURI = "%s";</script>', logo_uri
+)))
 ```
 
 ```{=html}
@@ -661,6 +922,53 @@ var counterObserver = new IntersectionObserver(function(entries) {
 }, { threshold: 0.5 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Inject margin glow strips + ruler marks
+  function createMarginDecor(side) {
+    var decor = document.createElement('div');
+    decor.className = 'margin-decor ' + side;
+    var glow = document.createElement('div');
+    glow.className = 'glow-strip';
+    var ruler = document.createElement('div');
+    ruler.className = 'ruler';
+    for (var i = 1; i <= 20; i++) {
+      var num = document.createElement('span');
+      num.className = 'ruler-number';
+      num.style.top = (i * 80 - 2) + 'px';
+      num.textContent = i;
+      ruler.appendChild(num);
+    }
+    if (side === 'left') {
+      decor.appendChild(glow);
+      decor.appendChild(ruler);
+    } else {
+      decor.appendChild(ruler);
+      decor.appendChild(glow);
+    }
+    document.body.appendChild(decor);
+  }
+  createMarginDecor('left');
+  createMarginDecor('right');
+
+  // Inject firm branding bar at the very top of the page
+  var brandingBar = document.createElement('div');
+  brandingBar.className = 'firm-branding-bar';
+  brandingBar.innerHTML = '' +
+    '<div class="firm-left">' +
+      '<img src="' + (typeof caLogoDataURI !== 'undefined' && caLogoDataURI ? caLogoDataURI : 'ca_logo.png') + '" alt="CA Consultants Limited" class="firm-logo" />' +
+      '<div>' +
+        '<div class="firm-name">CA Consultants Limited</div>' +
+        '<div class="firm-tagline">MEP Engineering &#8226; Design &#8226; Supervision</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="firm-location">Lagos, Nigeria</div>';
+  var mainContent = document.querySelector('#quarto-content') || document.querySelector('main') || document.body.firstChild;
+  if (mainContent) {
+    mainContent.parentNode.insertBefore(brandingBar, mainContent);
+  } else {
+    document.body.insertBefore(brandingBar, document.body.firstChild);
+  }
+
+  // Animated counters
   document.querySelectorAll('.metric-value[data-target]').forEach(function(el) {
     counterObserver.observe(el);
   });
@@ -690,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
 required_pkgs <- c(
   "tidyverse", "plotly", "DT", "ggcorrplot", "car", "broom",
   "scales", "kableExtra", "patchwork", "rstatix", "moments",
-  "viridis", "effectsize", "crosstalk", "htmltools"
+  "viridis", "effectsize", "crosstalk", "htmltools", "base64enc"
 )
 invisible(lapply(required_pkgs, function(pkg) {
   if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg, quiet = TRUE)
@@ -919,6 +1227,23 @@ htmltools::browsable(htmltools::HTML(sprintf('
 ```
 
 
+```{r}
+#| label: download-btn-description
+#| echo: false
+
+csv_text <- paste(readLines("mep_projects.csv", warn = FALSE), collapse = "\n")
+csv_b64  <- base64enc::base64encode(charToRaw(csv_text))
+
+htmltools::browsable(htmltools::HTML(sprintf('
+<a class="download-data-btn"
+   href="data:text/csv;base64,%s"
+   download="mep_projects.csv">
+  <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
+  Download Dataset (CSV)
+</a>
+', csv_b64)))
+```
+
 ## 4.1 Summary Statistics
 
 ```{r}
@@ -974,6 +1299,23 @@ cat_summary %>%
 ## 4.3 Interactive Data Explorer
 
 Use the dropdown filters below to dynamically explore the dataset by building type, project status, or discipline scope.
+
+```{r}
+#| label: download-btn-explorer
+#| echo: false
+
+csv_text2 <- paste(readLines("mep_projects.csv", warn = FALSE), collapse = "\n")
+csv_b64_2 <- base64enc::base64encode(charToRaw(csv_text2))
+
+htmltools::browsable(htmltools::HTML(sprintf('
+<a class="download-data-btn"
+   href="data:text/csv;base64,%s"
+   download="mep_projects.csv">
+  <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
+  Download Dataset (CSV)
+</a>
+', csv_b64_2)))
+```
 
 ```{r}
 #| label: data-table
@@ -1077,9 +1419,19 @@ upper_fence <- Q3 + 1.5 * IQR_val
 
 outliers <- df %>% filter(Project_Value > upper_fence | Project_Value < lower_fence)
 
-cat(sprintf("**IQR Method for Project Value:**\n\n- Q1 = ₦%s | Q3 = ₦%s | IQR = ₦%s\n- Upper fence = ₦%s\n- **%d outliers detected** (%.1f%% of data) — all on the high end\n",
-            comma(Q1), comma(Q3), comma(IQR_val),
-            comma(upper_fence), nrow(outliers), 100*nrow(outliers)/nrow(df)))
+htmltools::browsable(htmltools::HTML(sprintf('
+<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-amber); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">
+  <h4 style="color: var(--accent-amber); margin: 0 0 0.5rem;">IQR Method for Project Value</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;">Q1</td><td>&#8358;%s</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Q3</td><td>&#8358;%s</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">IQR</td><td>&#8358;%s</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Upper fence</td><td>&#8358;%s</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>Outliers detected</strong></td><td><strong>%d</strong> (%.1f%%%% of data) &mdash; all on the high end</td></tr>
+  </table>
+</div>',
+  comma(Q1), comma(Q3), comma(IQR_val),
+  comma(upper_fence), nrow(outliers), 100*nrow(outliers)/nrow(df))))
 ```
 
 ```{r}
@@ -1142,6 +1494,10 @@ p3 <- ggplot(df, aes(x = Discipline, fill = Discipline)) +
 
 ```{python}
 #| label: eda-python
+#| output: asis
+
+import subprocess, sys
+_ = subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "tabulate"])
 
 import pandas as pd
 import numpy as np
@@ -1162,55 +1518,59 @@ matplotlib.rcParams.update({
 
 # Load and clean data
 df_py = pd.read_csv("mep_projects.csv")
-df_py['Project_Value'] = df_py['Project_Value_NGN'].str.replace(r'[₦, ]', '', regex=True).astype(float)
+if df_py['Project_Value_NGN'].dtype == 'object':
+    df_py['Project_Value'] = pd.to_numeric(df_py['Project_Value_NGN'].str.replace(r'[₦, ]', '', regex=True), errors='coerce')
+else:
+    df_py['Project_Value'] = pd.to_numeric(df_py['Project_Value_NGN'], errors='coerce')
 df_py['Value_Millions'] = df_py['Project_Value'] / 1e6
 
 # Summary statistics
-print("=" * 60)
-print("NUMERIC VARIABLE SUMMARY")
-print("=" * 60)
-print(df_py[['Project_Value', 'Design_Duration_Days', 'Revision_Count', 'Project_Year']].describe().round(2).to_string())
+desc = df_py[['Project_Value', 'Design_Duration_Days', 'Revision_Count', 'Project_Year']].describe().round(2)
+print("\n**Numeric Variable Summary**\n")
+print(desc.to_markdown())
 
-print("\n" + "=" * 60)
-print("MISSING VALUES")
-print("=" * 60)
-print(df_py.isnull().sum().to_string())
+# Missing values
+missing = df_py.isnull().sum().to_frame("Missing Count")
+missing["Present"] = len(df_py) - missing["Missing Count"]
+missing["% Missing"] = (100 * missing["Missing Count"] / len(df_py)).round(1)
+print("\n\n**Missing Values**\n")
+print(missing.to_markdown())
 
-print("\n" + "=" * 60)
-print("CATEGORICAL DISTRIBUTIONS")
-print("=" * 60)
+# Categorical distributions
+print("\n\n**Categorical Distributions**\n")
 for col in ['Project_Type', 'Project_Status', 'Discipline']:
-    print(f"\n{col}:")
-    counts = df_py[col].value_counts()
-    for val, cnt in counts.items():
-        print(f"  {val}: {cnt} ({100*cnt/len(df_py):.1f}%)")
+    counts = df_py[col].value_counts().to_frame("Count")
+    counts["Percentage"] = (100 * counts["Count"] / len(df_py)).round(1).astype(str) + "%"
+    print(f"\n*{col}*\n")
+    print(counts.to_markdown())
 ```
 
 ```{python}
 #| label: eda-python-plot
 #| fig-cap: "Distribution of Project Values (Python/Matplotlib)"
+#| results: hide
 
 fig, axes = plt.subplots(1, 3, figsize=(14, 5))
 
 # Histogram of values
-axes[0].hist(df_py['Value_Millions'].dropna(), bins=25, color='#00d4ff', alpha=0.7, edgecolor='#161b22')
-axes[0].set_title('Project Value Distribution', color='#f0f6fc', fontweight='bold')
-axes[0].set_xlabel('Value (₦ Millions)')
-axes[0].set_ylabel('Frequency')
+_ = axes[0].hist(df_py['Value_Millions'].dropna(), bins=25, color='#00d4ff', alpha=0.7, edgecolor='#161b22')
+_ = axes[0].set_title('Project Value Distribution', color='#f0f6fc', fontweight='bold')
+_ = axes[0].set_xlabel('Value (₦ Millions)')
+_ = axes[0].set_ylabel('Frequency')
 
 # Bar chart: Project Type
 type_counts = df_py['Project_Type'].value_counts()
 colors_type = ['#00d4ff', '#ff006e', '#ffbe0b']
-axes[1].barh(type_counts.index, type_counts.values, color=colors_type[:len(type_counts)], alpha=0.85)
-axes[1].set_title('Projects by Type', color='#f0f6fc', fontweight='bold')
-axes[1].set_xlabel('Count')
+_ = axes[1].barh(type_counts.index, type_counts.values, color=colors_type[:len(type_counts)], alpha=0.85)
+_ = axes[1].set_title('Projects by Type', color='#f0f6fc', fontweight='bold')
+_ = axes[1].set_xlabel('Count')
 
 # Bar chart: Status
 status_counts = df_py['Project_Status'].value_counts()
 colors_status = ['#00ff87', '#ffbe0b', '#8b949e']
-axes[2].barh(status_counts.index, status_counts.values, color=colors_status[:len(status_counts)], alpha=0.85)
-axes[2].set_title('Projects by Status', color='#f0f6fc', fontweight='bold')
-axes[2].set_xlabel('Count')
+_ = axes[2].barh(status_counts.index, status_counts.values, color=colors_status[:len(status_counts)], alpha=0.85)
+_ = axes[2].set_title('Projects by Status', color='#f0f6fc', fontweight='bold')
+_ = axes[2].set_xlabel('Count')
 
 plt.tight_layout()
 plt.show()
@@ -1365,6 +1725,7 @@ ggplot(df, aes(x = reorder(Discipline, Value_Millions, FUN = median), y = Value_
 ```{python}
 #| label: viz-python
 #| fig-cap: "Python visualisation suite using Seaborn"
+#| results: hide
 
 import seaborn as sns
 
@@ -1373,40 +1734,40 @@ fig, axes = plt.subplots(2, 2, figsize=(14, 11))
 # 1. Violin: Value by Type
 palette_type = {'Commercial': '#00d4ff', 'Industrial': '#ff006e', 'Residential': '#ffbe0b'}
 order = ['Commercial', 'Industrial', 'Residential']
-sns.violinplot(data=df_py, x='Project_Type', y='Value_Millions', order=order,
+_ = sns.violinplot(data=df_py, x='Project_Type', y='Value_Millions', order=order,
                palette=palette_type, alpha=0.6, inner='box', ax=axes[0,0])
-axes[0,0].set_title('Value Distribution by Type', color='#f0f6fc', fontweight='bold')
-axes[0,0].set_xlabel('')
-axes[0,0].set_ylabel('Value (₦ Millions)')
+_ = axes[0,0].set_title('Value Distribution by Type', color='#f0f6fc', fontweight='bold')
+_ = axes[0,0].set_xlabel('')
+_ = axes[0,0].set_ylabel('Value (₦ Millions)')
 
 # 2. Timeline
 year_counts = df_py.groupby(['Project_Year', 'Project_Type']).size().unstack(fill_value=0)
-year_counts.plot.area(ax=axes[0,1], alpha=0.7,
+_ = year_counts.plot.area(ax=axes[0,1], alpha=0.7,
                        color=[palette_type.get(c, '#888') for c in year_counts.columns])
-axes[0,1].set_title('Portfolio Growth Over Time', color='#f0f6fc', fontweight='bold')
-axes[0,1].set_xlabel('Year')
-axes[0,1].set_ylabel('Number of Projects')
-axes[0,1].legend(fontsize=8)
+_ = axes[0,1].set_title('Portfolio Growth Over Time', color='#f0f6fc', fontweight='bold')
+_ = axes[0,1].set_xlabel('Year')
+_ = axes[0,1].set_ylabel('Number of Projects')
+_ = axes[0,1].legend(fontsize=8)
 
 # 3. Scatter: Duration vs Value
 mask = df_py['Design_Duration_Days'].notna() & df_py['Revision_Count'].notna()
 for ptype, colour in palette_type.items():
     subset = df_py[mask & (df_py['Project_Type'] == ptype)]
-    axes[1,0].scatter(subset['Design_Duration_Days'], subset['Value_Millions'],
+    _ = axes[1,0].scatter(subset['Design_Duration_Days'], subset['Value_Millions'],
                        c=colour, alpha=0.6, s=50, label=ptype, edgecolors='none')
-axes[1,0].set_title('Duration vs Value', color='#f0f6fc', fontweight='bold')
-axes[1,0].set_xlabel('Design Duration (Days)')
-axes[1,0].set_ylabel('Value (₦ Millions)')
-axes[1,0].legend(fontsize=8)
+_ = axes[1,0].set_title('Duration vs Value', color='#f0f6fc', fontweight='bold')
+_ = axes[1,0].set_xlabel('Design Duration (Days)')
+_ = axes[1,0].set_ylabel('Value (₦ Millions)')
+_ = axes[1,0].legend(fontsize=8)
 
 # 4. Box: Value by Discipline
 disc_order = ['MEP', 'E Only', 'M Only']
 palette_disc = {'MEP': '#00d4ff', 'E Only': '#ff006e', 'M Only': '#ffbe0b'}
-sns.boxplot(data=df_py, x='Discipline', y='Value_Millions', order=disc_order,
+_ = sns.boxplot(data=df_py, x='Discipline', y='Value_Millions', order=disc_order,
             palette=palette_disc, ax=axes[1,1])
-axes[1,1].set_title('Value by Discipline Scope', color='#f0f6fc', fontweight='bold')
-axes[1,1].set_xlabel('')
-axes[1,1].set_ylabel('Value (₦ Millions)')
+_ = axes[1,1].set_title('Value by Discipline Scope', color='#f0f6fc', fontweight='bold')
+_ = axes[1,1].set_xlabel('')
+_ = axes[1,1].set_ylabel('Value (₦ Millions)')
 
 plt.tight_layout()
 plt.show()
@@ -1458,15 +1819,28 @@ norm_tests %>%
 
 ```{r}
 #| label: hyp1-levene
+#| echo: true
 
 # Levene's Test for Homogeneity of Variance (assumption check)
 levene_result <- car::leveneTest(Project_Value ~ Project_Type, data = df)
-cat(sprintf("**Levene's Test for Equal Variances:**\n\n- F(%d, %d) = %.2f, **p-value = %.4f**\n- Interpretation: %s\n\nSince normality is violated (Shapiro-Wilk), we proceed with the **Kruskal-Wallis** non-parametric test as the primary analysis, and supplement with **Welch's ANOVA** (which does not assume equal variances) for robustness.\n",
+interp <- if_else(levene_result$`Pr(>F)`[1] < 0.05,
+          "Variances are significantly unequal &mdash; classical ANOVA is inappropriate",
+          "Variances are approximately equal")
+
+htmltools::browsable(htmltools::HTML(sprintf('
+<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-cyan); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">
+  <h4 style="color: var(--accent-cyan); margin: 0 0 0.5rem;">Levene&#8217;s Test for Equal Variances</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>F(%d, %d)</strong></td><td>= %.2f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>p-value</strong></td><td>= %.4f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>Interpretation</strong></td><td>%s</td></tr>
+  </table>
+  <p style="margin: 0.8rem 0 0; color: var(--text-muted); font-size: 0.9rem;">
+    Since normality is violated (Shapiro-Wilk), we proceed with the <strong>Kruskal-Wallis</strong> non-parametric test as the primary analysis, and supplement with <strong>Welch&#8217;s ANOVA</strong> (which does not assume equal variances) for robustness.
+  </p>
+</div>',
   levene_result$Df[1], levene_result$Df[2],
-  levene_result$`F value`[1], levene_result$`Pr(>F)`[1],
-  if_else(levene_result$`Pr(>F)`[1] < 0.05,
-          "Variances are significantly unequal — classical ANOVA is inappropriate",
-          "Variances are approximately equal")))
+  levene_result$`F value`[1], levene_result$`Pr(>F)`[1], interp)))
 ```
 
 ```{r}
@@ -1484,22 +1858,52 @@ kw_effect <- df %>% kruskal_effsize(Project_Value ~ Project_Type)
 # Pairwise Wilcoxon with Bonferroni correction
 pairwise <- pairwise.wilcox.test(df$Project_Value, df$Project_Type, p.adjust.method = "bonferroni")
 
-cat(sprintf("**Kruskal-Wallis Test (primary — non-parametric):**\n\n- χ² = %.2f, df = %d, **p-value = %.4f**\n- Effect size (η²[H]): %.3f (%s)\n\n**Welch's ANOVA (robustness check — does not require equal variances):**\n\n- F(%.1f, %.1f) = %.2f, **p-value = %.4f**\n- Both tests agree: %s\n",
-            kw_test$statistic, kw_test$parameter, kw_test$p.value,
-            kw_effect$effsize, kw_effect$magnitude,
-            welch_test$parameter[1], welch_test$parameter[2],
-            welch_test$statistic, welch_test$p.value,
-            if_else(kw_test$p.value < 0.05 & welch_test$p.value < 0.05,
+agree_txt <- if_else(kw_test$p.value < 0.05 & welch_test$p.value < 0.05,
                     "significant difference exists across building types",
-                    "results are consistent")))
+                    "results are consistent")
+
+htmltools::browsable(htmltools::HTML(sprintf('
+<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-purple); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">
+  <h4 style="color: var(--accent-purple); margin: 0 0 0.5rem;">Kruskal-Wallis Test (primary &mdash; non-parametric)</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;">&chi;&sup2;</td><td>= %.2f, df = %d</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>p-value</strong></td><td>= %.4f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Effect size (&eta;&sup2;[H])</td><td>= %.3f (%s)</td></tr>
+  </table>
+
+  <h4 style="color: var(--accent-amber); margin: 1rem 0 0.5rem;">Welch&#8217;s ANOVA (robustness check)</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;">F(%.1f, %.1f)</td><td>= %.2f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>p-value</strong></td><td>= %.4f</td></tr>
+  </table>
+  <p style="margin: 0.8rem 0 0; color: var(--accent-green); font-size: 0.9rem; font-weight: 600;">
+    &#10003; Both tests agree: %s
+  </p>
+</div>',
+  kw_test$statistic, kw_test$parameter, kw_test$p.value,
+  kw_effect$effsize, kw_effect$magnitude,
+  welch_test$parameter[1], welch_test$parameter[2],
+  welch_test$statistic, welch_test$p.value, agree_txt)))
 ```
 
 ```{r}
 #| label: hyp1-pairwise
 
-# Display pairwise comparisons
-cat("**Post-Hoc Pairwise Wilcoxon Tests (Bonferroni-adjusted):**\n\n")
-print(pairwise)
+# Display pairwise comparisons as styled table
+pw_matrix <- pairwise$p.value
+pw_df <- as.data.frame(pw_matrix)
+pw_df <- cbind(Group = rownames(pw_df), pw_df)
+pw_df[] <- lapply(pw_df, function(x) if(is.numeric(x)) round(x, 4) else x)
+
+htmltools::browsable(htmltools::HTML(paste0(
+  '<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-magenta); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">',
+  '<h4 style="color: var(--accent-magenta); margin: 0 0 0.5rem;">Post-Hoc Pairwise Wilcoxon Tests (Bonferroni-adjusted)</h4>',
+  '<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Method: ', pairwise$p.adjust.method, '</p>',
+  kableExtra::kbl(pw_df, format = "html", row.names = FALSE) %>%
+    kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE, font_size = 14) %>%
+    kableExtra::row_spec(0, bold = TRUE, color = "#00d4ff", background = "#1c2333"),
+  '</div>'
+)))
 ```
 
 ```{r}
@@ -1551,9 +1955,18 @@ df_dur <- df %>% filter(!is.na(Design_Duration_Days))
 kw_dur <- kruskal.test(Design_Duration_Days ~ Project_Type, data = df_dur)
 kw_dur_effect <- df_dur %>% kruskal_effsize(Design_Duration_Days ~ Project_Type)
 
-cat(sprintf("**Kruskal-Wallis Test (Design Duration ~ Building Type):**\n\n- χ² = %.2f, df = %d, **p-value = %.4f**\n- Effect size (η²[H]): %.3f (%s)\n- Observations used: %d (excluding supervision-only projects)\n",
-            kw_dur$statistic, kw_dur$parameter, kw_dur$p.value,
-            kw_dur_effect$effsize, kw_dur_effect$magnitude, nrow(df_dur)))
+htmltools::browsable(htmltools::HTML(sprintf('
+<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-purple); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">
+  <h4 style="color: var(--accent-purple); margin: 0 0 0.5rem;">Kruskal-Wallis Test (Design Duration ~ Building Type)</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;">&chi;&sup2;</td><td>= %.2f, df = %d</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;"><strong>p-value</strong></td><td>= %.4f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Effect size (&eta;&sup2;[H])</td><td>= %.3f (%s)</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Observations used</td><td>%d (excluding supervision-only projects)</td></tr>
+  </table>
+</div>',
+  kw_dur$statistic, kw_dur$parameter, kw_dur$p.value,
+  kw_dur_effect$effsize, kw_dur_effect$magnitude, nrow(df_dur))))
 ```
 
 ```{r}
@@ -1599,11 +2012,15 @@ if (kw_dur$p.value < 0.05) {
 
 ```{python}
 #| label: hyp-python
+#| output: asis
 
 from scipy import stats
 
 # Clean numeric columns
-df_py['Project_Value'] = pd.to_numeric(df_py['Project_Value_NGN'].str.replace(r'[₦, ]', '', regex=True), errors='coerce')
+if df_py['Project_Value_NGN'].dtype == 'object':
+    df_py['Project_Value'] = pd.to_numeric(df_py['Project_Value_NGN'].str.replace(r'[₦, ]', '', regex=True), errors='coerce')
+else:
+    df_py['Project_Value'] = pd.to_numeric(df_py['Project_Value_NGN'], errors='coerce')
 df_py['Design_Duration_Days'] = pd.to_numeric(df_py['Design_Duration_Days'], errors='coerce')
 df_py['Revision_Count'] = pd.to_numeric(df_py['Revision_Count'], errors='coerce')
 
@@ -1611,28 +2028,30 @@ df_py['Revision_Count'] = pd.to_numeric(df_py['Revision_Count'], errors='coerce'
 groups_val = [grp['Project_Value'].dropna().values
               for _, grp in df_py.groupby('Project_Type')]
 kw_stat, kw_p = stats.kruskal(*groups_val)
-print("=" * 60)
-print("HYPOTHESIS 1: Project Value ~ Building Type")
-print("=" * 60)
-print(f"Kruskal-Wallis H = {kw_stat:.3f}, p-value = {kw_p:.4f}")
-print(f"Decision: {'Reject H₀' if kw_p < 0.05 else 'Fail to reject H₀'} at α = 0.05")
+
+# Hypothesis 1 results
+dec1 = "Reject H₀" if kw_p < 0.05 else "Fail to reject H₀"
+hyp1 = pd.DataFrame({"Statistic": ["Kruskal-Wallis H", "p-value", "Decision (α = 0.05)"],
+                      "Value": [f"{kw_stat:.3f}", f"{kw_p:.4f}", dec1]})
+print("**Hypothesis 1: Project Value ~ Building Type**\n")
+print(hyp1.to_markdown(index=False))
 
 # Hypothesis 2: Duration ~ Project Type
 df_dur_py = df_py.dropna(subset=['Design_Duration_Days'])
 groups_dur = [grp['Design_Duration_Days'].dropna().values
               for _, grp in df_dur_py.groupby('Project_Type')]
 kw_stat2, kw_p2 = stats.kruskal(*groups_dur)
-print(f"\n{'=' * 60}")
-print("HYPOTHESIS 2: Design Duration ~ Building Type")
-print("=" * 60)
-print(f"Kruskal-Wallis H = {kw_stat2:.3f}, p-value = {kw_p2:.4f}")
-print(f"Decision: {'Reject H₀' if kw_p2 < 0.05 else 'Fail to reject H₀'} at α = 0.05")
+dec2 = "Reject H₀" if kw_p2 < 0.05 else "Fail to reject H₀"
+
+hyp2 = pd.DataFrame({"Statistic": ["Kruskal-Wallis H", "p-value", "Decision (α = 0.05)"],
+                      "Value": [f"{kw_stat2:.3f}", f"{kw_p2:.4f}", dec2]})
+print("\n\n**Hypothesis 2: Design Duration ~ Building Type**\n")
+print(hyp2.to_markdown(index=False))
 
 # Group medians
-print(f"\n{'=' * 60}")
-print("GROUP MEDIANS — Project Value (₦ Millions)")
-print("=" * 60)
-print(df_py.groupby('Project_Type')['Value_Millions'].median().round(1).to_string())
+medians = df_py.groupby('Project_Type')['Value_Millions'].median().round(1).to_frame("Median Value (₦M)")
+print("\n\n**Group Medians — Project Value**\n")
+print(medians.to_markdown())
 ```
 
 :::
@@ -1819,6 +2238,7 @@ ggplotly(p_corr, tooltip = "text") %>%
 ```{python}
 #| label: corr-python
 #| fig-cap: "Correlation heatmap (Python/Seaborn)"
+#| results: hide
 
 # Prepare design-complete subset
 df_design_py = df_py.dropna(subset=['Design_Duration_Days', 'Revision_Count'])
@@ -1827,25 +2247,32 @@ corr_matrix = df_design_py[corr_cols].corr(method='spearman')
 
 fig, ax = plt.subplots(figsize=(8, 7))
 mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
-sns.heatmap(corr_matrix, mask=mask, annot=True, fmt='.3f',
+_ = sns.heatmap(corr_matrix, mask=mask, annot=True, fmt='.3f',
             cmap='coolwarm', center=0, linewidths=1,
             linecolor='#30363d', cbar_kws={'shrink': 0.8},
             annot_kws={'color': '#f0f6fc', 'fontsize': 12},
             ax=ax)
-ax.set_title('Spearman Correlation Matrix', color='#f0f6fc', fontweight='bold', pad=15)
+_ = ax.set_title('Spearman Correlation Matrix', color='#f0f6fc', fontweight='bold', pad=15)
 plt.tight_layout()
 plt.show()
+```
 
-# Print top correlations
-print("\nTop Correlations (by absolute value):")
+```{python}
+#| label: corr-python-table
+#| output: asis
+
+# Top correlations as styled table
 pairs = []
 for i in range(len(corr_matrix.columns)):
     for j in range(i+1, len(corr_matrix.columns)):
         pairs.append((corr_matrix.columns[i], corr_matrix.columns[j],
                        corr_matrix.iloc[i, j]))
 pairs.sort(key=lambda x: abs(x[2]), reverse=True)
-for v1, v2, rho in pairs:
-    print(f"  {v1} — {v2}: ρ = {rho:.3f}")
+
+pairs_df = pd.DataFrame(pairs, columns=["Variable 1", "Variable 2", "Spearman ρ"])
+pairs_df["Spearman ρ"] = pairs_df["Spearman ρ"].round(3)
+print("\n**Top Correlations (by absolute value)**\n")
+print(pairs_df.to_markdown(index=False))
 ```
 
 :::
@@ -1890,11 +2317,21 @@ model_summary <- summary(model)
 model_tidy <- tidy(model, conf.int = TRUE)
 model_glance <- glance(model)
 
-cat(sprintf("**Model Fit:**\n\n- R² = %.3f (Adjusted R² = %.3f)\n- F(%d, %d) = %.2f, p = %.2e\n- Residual SE = %.3f\n- Observations: %d\n",
-            model_glance$r.squared, model_glance$adj.r.squared,
-            model_glance$df, model_glance$df.residual,
-            model_glance$statistic, model_glance$p.value,
-            model_glance$sigma, nrow(df_design)))
+htmltools::browsable(htmltools::HTML(sprintf('
+<div style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-green); padding: 1rem 1.5rem; border-radius: 6px; margin: 1rem 0;">
+  <h4 style="color: var(--accent-green); margin: 0 0 0.5rem;">Model Fit</h4>
+  <table style="font-size: 0.95rem; color: var(--text-secondary);">
+    <tr><td style="padding: 4px 16px 4px 0;">R&sup2;</td><td>%.3f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Adjusted R&sup2;</td><td>%.3f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">F(%d, %d)</td><td>%.2f, p = %.2e</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Residual SE</td><td>%.3f</td></tr>
+    <tr><td style="padding: 4px 16px 4px 0;">Observations</td><td>%d</td></tr>
+  </table>
+</div>',
+  model_glance$r.squared, model_glance$adj.r.squared,
+  model_glance$df, model_glance$df.residual,
+  model_glance$statistic, model_glance$p.value,
+  model_glance$sigma, nrow(df_design))))
 ```
 
 ### 9.2 Coefficient Table
@@ -2062,6 +2499,7 @@ htmltools::browsable(htmltools::HTML(sprintf('
 
 ```{python}
 #| label: reg-python
+#| output: asis
 
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
@@ -2073,31 +2511,72 @@ df_reg_py['log_value'] = np.log(df_reg_py['Project_Value'])
 # Fit OLS model
 formula = 'log_value ~ Design_Duration_Days + Revision_Count + C(Project_Type) + C(Discipline) + Project_Year'
 model_py = smf.ols(formula, data=df_reg_py).fit()
-print(model_py.summary())
+
+# Model fit summary
+print("**Model Fit Summary**\n")
+fit_df = pd.DataFrame({
+    "Metric": ["R-squared", "Adj. R-squared", "F-statistic", "Prob (F-statistic)",
+               "Log-Likelihood", "AIC", "BIC", "Observations", "Df Residuals"],
+    "Value": [f"{model_py.rsquared:.4f}", f"{model_py.rsquared_adj:.4f}",
+              f"{model_py.fvalue:.3f}", f"{model_py.f_pvalue:.2e}",
+              f"{model_py.llf:.2f}", f"{model_py.aic:.1f}", f"{model_py.bic:.1f}",
+              f"{int(model_py.nobs)}", f"{int(model_py.df_resid)}"]
+})
+print(fit_df.to_markdown(index=False))
+
+# Coefficient table
+print("\n\n**Coefficient Table**\n")
+coef_df = pd.DataFrame({
+    "Term": model_py.params.index,
+    "Coefficient": model_py.params.round(4).values,
+    "Std Error": model_py.bse.round(4).values,
+    "t-value": model_py.tvalues.round(3).values,
+    "p-value": model_py.pvalues.round(4).values,
+    "CI Lower": model_py.conf_int()[0].round(3).values,
+    "CI Upper": model_py.conf_int()[1].round(3).values,
+})
+coef_df["Sig"] = coef_df["p-value"].apply(lambda p: "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "")
+print(coef_df.to_markdown(index=False))
+
+# Diagnostics
+print("\n\n**Residual Diagnostics**\n")
+from scipy.stats import jarque_bera
+jb_result = jarque_bera(model_py.resid)
+resid_skew = float(model_py.resid.skew())
+resid_kurt = float(model_py.resid.kurtosis() + 3)
+diag_df = pd.DataFrame({
+    "Diagnostic": ["Durbin-Watson", "Jarque-Bera", "Prob(JB)", "Skewness", "Kurtosis", "Condition No."],
+    "Value": [f"{sm.stats.durbin_watson(model_py.resid):.3f}",
+              f"{jb_result.statistic:.3f}", f"{jb_result.pvalue:.2e}",
+              f"{resid_skew:.3f}", f"{resid_kurt:.3f}",
+              f"{np.linalg.cond(model_py.model.exog):.0f}"]
+})
+print(diag_df.to_markdown(index=False))
 ```
 
 ```{python}
 #| label: reg-python-diag
 #| fig-cap: "Residual diagnostic plots (Python/statsmodels)"
+#| results: hide
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
 # Residuals vs Fitted
 fitted = model_py.fittedvalues
 resids = model_py.resid
-axes[0].scatter(fitted, resids, alpha=0.6, color='#00d4ff', edgecolors='none')
-axes[0].axhline(y=0, color='#ff006e', linestyle='--', alpha=0.7)
-axes[0].set_title('Residuals vs Fitted', color='#f0f6fc', fontweight='bold')
-axes[0].set_xlabel('Fitted Values')
-axes[0].set_ylabel('Residuals')
+_ = axes[0].scatter(fitted, resids, alpha=0.6, color='#00d4ff', edgecolors='none')
+_ = axes[0].axhline(y=0, color='#ff006e', linestyle='--', alpha=0.7)
+_ = axes[0].set_title('Residuals vs Fitted', color='#f0f6fc', fontweight='bold')
+_ = axes[0].set_xlabel('Fitted Values')
+_ = axes[0].set_ylabel('Residuals')
 
 # Q-Q Plot
 from scipy.stats import probplot
-probplot(resids, plot=axes[1])
+_ = probplot(resids, plot=axes[1])
 axes[1].get_lines()[0].set_color('#00d4ff')
 axes[1].get_lines()[0].set_markersize(5)
 axes[1].get_lines()[1].set_color('#ff006e')
-axes[1].set_title('Normal Q-Q Plot', color='#f0f6fc', fontweight='bold')
+_ = axes[1].set_title('Normal Q-Q Plot', color='#f0f6fc', fontweight='bold')
 
 plt.tight_layout()
 plt.show()
@@ -2199,7 +2678,7 @@ Allaire, J. J., Teague, C., Scheidegger, C., Xie, Y., & Dervieux, C. (2022). *Qu
 
 The complete source code and data for this analysis are publicly available at:
 
-**[https://github.com/YOUR-USERNAME/ca-consultants-mep-analytics](https://github.com/YOUR-USERNAME/ca-consultants-mep-analytics)**
+**[https://github.com/chidubemsbox-art/Dubydarego](https://github.com/chidubemsbox-art/Dubydarego)**
 
 The repository contains:
 
@@ -2209,14 +2688,6 @@ The repository contains:
 
 To reproduce: clone the repo, open the `.qmd` in RStudio, and click **Render**.
 :::
-
-> **Setup instructions (do this before submission):**
->
-> 1. Go to [github.com](https://github.com) and create a new **public** repository named `ca-consultants-mep-analytics`
-> 2. Upload `CA_Consultants_MEP_Analysis.qmd` and `mep_projects.csv`
-> 3. Add a short `README.md` (GitHub will prompt you)
-> 4. Replace `YOUR-USERNAME` above with your actual GitHub username
-> 5. Paste the repo URL into your LMS submission alongside the RPubs link
 
 
 <!-- ============================================================== -->
@@ -2228,3 +2699,19 @@ To reproduce: clone the repo, open the `.qmd` in RStudio, and click **Render**.
 This submission was prepared with the assistance of **Claude** (Anthropic), an AI coding assistant. Claude was used for: (1) generating and debugging R and Python code for data cleaning, statistical tests, and visualisation; (2) formatting the Quarto document structure and custom CSS styling; and (3) suggesting appropriate statistical methods given the data characteristics (e.g., recommending Kruskal-Wallis over ANOVA due to non-normality).
 
 All **analytical decisions** were made independently by the author, including: the choice of Case Study 1 over alternatives, the selection of project value as the outcome variable, the formulation of both hypotheses based on real business questions at CA Consultants, the interpretation of all statistical outputs, and the integrated recommendation. The data was collected personally from CA Consultants' internal systems. The author can explain every line of code and every result in this document.
+
+```{=html}
+<div class="document-footer">
+  <div class="footer-divider"></div>
+  <div class="footer-name">Chidubem Mba</div>
+  <div>Senior Project Engineer &amp; Project Manager</div>
+  <div style="font-size: 0.85rem; color: #8b949e; margin-top: 2px;">Matric No: 2025-MMBA-8-039</div>
+  <div class="footer-firm">CA Consultants Limited &nbsp;&#8226;&nbsp; Lagos, Nigeria</div>
+  <div class="footer-divider"></div>
+  <div class="footer-programme">
+    Submitted in partial fulfilment of the requirements for the<br>
+    <strong>Modular MBA &mdash; Data Analytics II</strong><br>
+    Lagos Business School, Pan-Atlantic University &nbsp;&#8226;&nbsp; May 2026
+  </div>
+</div>
+```
